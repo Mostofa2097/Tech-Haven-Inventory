@@ -1,0 +1,511 @@
+{
+	"info": {
+		"_postman_id": "c015a47c-b48b-4d53-9b63-2692ad0189e7",
+		"name": "inventory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33581539"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "registrationError",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"mostofa.innovatica@gmail.com\",\r\n  \"phone\": \"8803432423434\",\r\n  \"password\": \"12341234\",\r\n  \"shopName\": \"erere\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://tech-haven.onrender.com/v1/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"kamal@gmail.com\",\r\n    \"phone\": \"8803432423434\",\r\n    \"password\": \"12341234\",\r\n    \"shopName\": \"kamal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://tech-haven.onrender.com/v1/auth/register"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subscription",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "shopDetails",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sales",
+			"item": [
+				{
+					"name": "sale",
+					"item": [
+						{
+							"name": "getCustomers",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "category",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiJkZmVlYjFhNi05MjVlLTRiODUtODg1My0wODIyYWMwNjM5NDAiLCJlbWFpbCI6Im1vc3RvZmEuaW5ub3ZhdGljYUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTE0MDY4MTQsImV4cCI6MTcxMTQ5MzIxNH0.px5nnzAJxFRlw46p-HhKDdooYkbpAjL7sKx0QEwrjVE",
+										"type": "text"
+									}
+								],
+								"url": "https://tech-haven.onrender.com/v1/product/categories"
+							},
+							"response": []
+						},
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiIyYWFiYzExNS01MGQ5LTRhZGEtYTc1NC02YTNlNWFlY2FiMDkiLCJlbWFpbCI6ImthbWFsQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxMTQwMzQzNSwiZXhwIjoxNzExNDg5ODM1fQ.SoOTRG4HPSwJfhS_G5pHs9JtTwIOKr5Cs1jQLbQvUXc",
+										"type": "text"
+									}
+								],
+								"url": "https://tech-haven.onrender.com/v1/product/get"
+							},
+							"response": []
+						},
+						{
+							"name": "sale",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"productId\": \"099560c1-7b6e-40ee-9bdf-45d3843609f7\",\r\n            \"productName\": \"MKs\",\r\n            \"purchaseAmount\": 20000,\r\n            \"salesRate\": 21000,\r\n            \"quantity\": 8,\r\n            \"totalAmount\": \"168000.00\",\r\n            \"categoryId\": \"1848fbd5-fdfd-4fff-bb01-aaee81ddca78\"\r\n        },\r\n        {\r\n            \"productId\": \"099560c1-7b6e-40ee-9bdf-45d3843609f7\",\r\n            \"productName\": \"MKs\",\r\n            \"purchaseAmount\": 20000,\r\n            \"salesRate\": 21000,\r\n            \"quantity\": 4,\r\n            \"totalAmount\": \"84000.00\",\r\n            \"categoryId\": \"1848fbd5-fdfd-4fff-bb01-aaee81ddca78\"\r\n        }\r\n    ],\r\n    \"customerId\": \"ead39067-ca0a-49f0-9d5c-7904ec7b4ac0\",\r\n    \"customerName\": \"Nahid\",\r\n    \"customerPhone\": \"019173647326\",\r\n    \"customerAddress\": \"Barisal\",\r\n    \"discountPercentage\": 0,\r\n    \"discountAmount\": 0,\r\n    \"vatPercentage\": 0,\r\n    \"vatAmount\": 0,\r\n    \"paidAmount\": 252000,\r\n    \"dueAmount\": 0,\r\n    \"subTotal\": 252000,\r\n    \"totalAmount\": 252000,\r\n    \"paymentType\": \"cash\",\r\n    \"totalCost\": \"240000.00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tech-haven.onrender.com/v1/product/sale"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "history",
+					"item": [
+						{
+							"name": "history",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "invoices",
+					"item": [
+						{
+							"name": "sale_invoices",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "print",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Purchase",
+			"item": [
+				{
+					"name": "CreatePurchase",
+					"item": [
+						{
+							"name": "getSuppliers",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "category",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "purchase",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Invoices",
+					"item": [
+						{
+							"name": "invoices",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "print",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "getProduct",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "category",
+					"item": [
+						{
+							"name": "getCategories",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "SubscriptionPlan",
+			"item": [
+				{
+					"name": "plans",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "activeDetails",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "sale",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "saleCategory",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": "https://tech-haven.onrender.com/v1/product/sale-category"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HRM",
+			"item": [
+				{
+					"name": "Department",
+					"item": [
+						{
+							"name": "departments",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "createDepartment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "designation",
+					"item": [
+						{
+							"name": "designationList",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "createDasignation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"designationName\": \"IT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tech-haven.onrender.com/v1/hrm/employee/designation\n"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "employee",
+					"item": [
+						{
+							"name": "empList",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "cerateEmployee",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "salary",
+					"item": [
+						{
+							"name": "salartList",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "giveSalary",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"employeeId\": \"537fb29f-6f76-42b2-a1ba-a019ff541af0\",\r\n    \"salary\": \"100\",\r\n    \"salaryMonth\": \"March, 2024\",\r\n    \"advanceAmount\": \"0\",\r\n    \"deduction\": \"0\",\r\n    \"commission\": \"0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tech-haven.onrender.com/v1/hrm/employee/salary"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Supplier",
+			"item": [
+				{
+					"name": "getSupplier",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "addSupplier",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"supplierName\": \"rabib\",\r\n    \"phone\": \"8801714300001\",\r\n    \"email\": \"rabib@gmail.com\",\r\n    \"address\": \"graptowen\",\r\n    \"previousDue\": \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://tech-haven.onrender.com/v1/admin/add-supplier"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "getCustomer",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "addCustomer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerName\": \"alamin\",\r\n    \"phone\": \"8801714300003\",\r\n    \"email\": \"alamin@gmail.com\",\r\n    \"address\": \"uthuli\",\r\n    \"previousDue\": \"00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://tech-haven.onrender.com/v1/admin/add-customer"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
